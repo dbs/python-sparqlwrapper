@@ -2,7 +2,7 @@
 %global with_python3 1
 
 Name:       python-%{modulename}
-Summary:    A python based HTML parser/tokenizer
+Summary:    SPARQL Endpoint interface to Python
 Version:    1.5.2
 Release:    1%{?dist}
 Group:      Development/Libraries
@@ -17,7 +17,7 @@ BuildRequires:    python2-devel
 BuildRequires:    python-nose
 BuildRequires:    python-six
 
-%if 1%{?with_python3}
+%if 0%{?with_python3}
 BuildRequires:    python3-devel
 BuildRequires:    python-tools
 BuildRequires:    python3-nose
@@ -73,23 +73,23 @@ nosetests
 
 %if 0%{?with_python3}
 pushd %{py3dir}
-nosetests-3.3
+nosetests-3.3 build
 popd
 %endif
 
 %files
-%doc ChangeLog.txt LICENSE.txt README.md
+%doc AUTHORS.txt ChangeLog.txt LICENSE.txt README.txt
 %{python2_sitelib}/%{modulename}-*.egg-info
 %{python2_sitelib}/%{modulename}
 
 %if 0%{?with_python3}
 %files -n python3-%{modulename}
-%doc ChangeLog.txt LICENSE.txt README.md
+%doc AUTHORS.txt ChangeLog.txt LICENSE.txt README.txt
 %{python3_sitelib}/%{modulename}-*.egg-info
 %{python3_sitelib}/%{modulename}
 %endif 
 
 
 %changelog
-* Sun Mar 2 2014 Dan Scott <dan@coffeecode.net> - 1.5.2-1
+* Sun Apr 20 2014 Dan Scott <dan@coffeecode.net> - 1.5.2-1
 - Initial spec
