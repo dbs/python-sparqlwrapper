@@ -6,7 +6,7 @@ Summary:    SPARQL Endpoint interface to Python
 Version:    1.5.2
 Release:    1%{?dist}
 Group:      Development/Libraries
-License:    W3C
+License:    W3C and BSD
 URL:        https://pypi.python.org/pypi/%{modulename}
 
 Source0:    https://pypi.python.org/packages/source/S/%{modulename}/%{modulename}-%{version}.tar.gz    
